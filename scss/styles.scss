@@ -32,20 +32,11 @@ img {
   width: 100%;
 }
 
-// Logo
-
-#logo {
-  width: 70px;
-  height: 70px;
-  color: #fff;
-  text-transform: uppercase;
-}
-
 // Main Nav
 #main-nav {
   display: flex;
   justify-content: space-between;
-  padding-top: 1rem;
+  padding-top: 1.1rem;
 
   ul {
     display: flex;
@@ -58,16 +49,18 @@ img {
   a {
     text-decoration: none;
     color: #fff;
+    font-size: 19px;
     text-transform: uppercase;
     border-bottom: 3px transparent solid;
     transition: border-color 0.5s;
+    font-weight: bold;
 
     &:hover {
-      border-color: $medium-color;
+      border-color: #778ca3;
     }
 
     &.current {
-      border-color: $main-color;
+      border-color: #4b6584;
     }
   }
 }
@@ -90,6 +83,12 @@ img {
       line-height: 1.2;
     }
   }
+}
+// Header Inner
+#header-inner {
+  background: $bd-image no-repeat 20% 30% / cover;
+  height: 5.5rem;
+  border-bottom: 3px solid $main-color;
 }
 
 //Home Sections
@@ -163,6 +162,7 @@ img {
         transition: all 1s;
       }
       //process-icon
+
       &-icon {
         border-radius: 50%;
         background: $dark-color;
@@ -191,6 +191,93 @@ img {
   }
 }
 
+// About Sections
+#about {
+  &-a {
+    .about-info {
+      display: grid;
+      grid-template-areas: "bioimage bio bio" "aw1 aw2";
+      grid-gap: 1.2rem;
+    }
+
+    // Grid Area //// ordenar y guardar en github
+    .bio-image {
+      grid-area: bioimage;
+    }
+
+    .bio {
+      grid-area: bio;
+      border-left: 3px solid $main-color;
+      padding: 0, 8rem;
+    }
+
+    .award-1 {
+      grid-area: aw1;
+    }
+    .award-2 {
+      grid-area: aw2;
+    }
+
+    .award-1 .fas,//gravando el icono
+    .award-2 .fas {
+      color: $main-color;
+      margin: 1rem;
+    }
+  }
+}
+
+// Contact Page
+
+#contact {
+  &-a {
+    .text-fields {
+      display: grid;
+      grid-template-areas: "name email" "subject phone" "message  messagge";
+
+      grid-gap: 1.2rem;
+      margin-bottom: 1.2rem;
+      // Grid Areas
+      .name-input {
+        grid-area: name;
+      }
+      .subject-input {
+        grid-area: subject;
+      }
+      .email-input {
+        grid-area: email;
+      }
+
+      .phone-input {
+        grid-area: phone;
+      }
+      .messagge-input {
+        height: 80px;
+      }
+
+      .text-input {
+        padding: 0.5rem 1rem;
+      }
+    }
+    button[type="submit"] {
+      width: 65%;
+      padding: 1.2rem;
+    }
+  }
+
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+  }
+  &-c {
+    h1 {
+      text-align: center;
+      font-size: 4rem;
+    }
+  }
+}
 // Footer
 
 #main-footer {
